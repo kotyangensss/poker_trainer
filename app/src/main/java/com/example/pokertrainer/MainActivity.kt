@@ -2,6 +2,7 @@ package com.example.pokertrainer
 
 import android.app.Dialog
 import android.content.Intent
+import android.media.MediaPlayer
 import android.os.Bundle
 import android.view.MotionEvent
 import android.widget.EditText
@@ -77,6 +78,13 @@ class MainActivity : AppCompatActivity() {
 
     private fun openSettingsDialog() {
         dialog.setContentView(R.layout.settings_window)
+
+        val soundButton : ImageButton = dialog.findViewById(R.id.soundButton)
+
+        soundButton.setOnClickListener {
+            MediaPlayer.create(this, R.raw.pudge).start()
+        }
+
         dialog.show()
     }
 }
