@@ -13,14 +13,13 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun playWithBot(view: android.view.View?) {
-        val button = findViewById<ImageButton>(R.id.botbutton)
-        button.alpha = 0.9F
         val intent = Intent(this@MainActivity, BotActivity::class.java)
         this.finish()
         startActivity(intent)
     }
-
-    fun exit(view: android.view.View?){
-       this.finish()
+    fun training(view: android.view.View?) {
+        val intent = Intent(this@MainActivity, TrainingActivity::class.java)
+        this.finish()
+        startActivity(intent)
     }
 }
