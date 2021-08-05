@@ -3,6 +3,7 @@ package com.example.pokertrainer
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.widget.ImageButton
 
 class TrainingActivity : AppCompatActivity() {
@@ -10,10 +11,17 @@ class TrainingActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         supportActionBar?.hide()
         setContentView(R.layout.activity_training)
+
+        val returnButton : ImageButton = findViewById(R.id.returnButton)
+
+        returnButton.setOnClickListener {
+            this.finish()
+        }
     }
-    fun returnButton(view: android.view.View?){
-        val intent = Intent(this@TrainingActivity, MainActivity::class.java)
-        startActivity(intent)
-        this.finish()
+
+    override fun onDestroy() {
+        super.onDestroy()
+
+        Log.d("ABOBA", "onDestroy")
     }
 }
