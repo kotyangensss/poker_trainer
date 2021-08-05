@@ -7,12 +7,19 @@ import android.util.Log
 import android.widget.ImageButton
 
 class TrainingActivity : AppCompatActivity() {
+
+    private lateinit var returnButton : ImageButton
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         supportActionBar?.hide()
         setContentView(R.layout.activity_training)
 
-        val returnButton : ImageButton = findViewById(R.id.returnButton)
+        returnButton = findViewById(R.id.returnButton)
+    }
+
+    override fun onResume() {
+        super.onResume()
 
         returnButton.setOnClickListener {
             this.finish()

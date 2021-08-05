@@ -1,40 +1,43 @@
 package com.example.pokertrainer
 
+import android.app.Dialog
 import android.content.Intent
+import android.media.MediaPlayer
 import android.os.Bundle
 import android.view.MotionEvent
+import android.widget.EditText
 import android.widget.ImageButton
 import androidx.appcompat.app.AppCompatActivity
 
 class MainActivity : AppCompatActivity() {
+
+    private lateinit var dialog : Dialog // а вот и решение проблемы
+
+    private lateinit var playButton : ImageButton
+    private lateinit var trainingButton : ImageButton
+    private lateinit var settingsButton : ImageButton
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         supportActionBar?.hide()
         setContentView(R.layout.activity_main)
 
-        val playButton : ImageButton = findViewById(R.id.playButton)
-        val trainingButton : ImageButton = findViewById(R.id.trainingButton)
-        val settingsButton : ImageButton = findViewById(R.id.settingsButton)
+        dialog = Dialog(this)
 
-        playButton.setOnTouchListener { v, event ->
-            when (event?.action) {
-                MotionEvent.ACTION_DOWN -> playButton.animate().scaleX(1.1f).scaleY(1.1f).duration = 50
-                MotionEvent.ACTION_UP -> playButton.animate().scaleX(1f).scaleY(1f).duration = 50
-            }
-            v?.onTouchEvent(event) ?: true
-        }
+        playButton = findViewById(R.id.playButton)
+        trainingButton = findViewById(R.id.trainingButton)
+        settingsButton = findViewById(R.id.settingsButton)
+    }
+
+    override fun onResume() {
+        super.onResume()
+
+        onTouchAnimated(playButton)
+        onTouchAnimated(trainingButton)
+        onTouchAnimated(settingsButton)
 
         playButton.setOnClickListener {
-            val playActivity = Intent(this, BotActivity::class.java)
-            startActivity(playActivity)
-        }
-
-        trainingButton.setOnTouchListener { v, event ->
-            when (event?.action) {
-                MotionEvent.ACTION_DOWN -> trainingButton.animate().scaleX(1.1f).scaleY(1.1f).duration = 50
-                MotionEvent.ACTION_UP -> trainingButton.animate().scaleX(1f).scaleY(1f).duration = 50
-            }
-            v?.onTouchEvent(event) ?: true
+            openNicknameDialog()
         }
 
         trainingButton.setOnClickListener {
@@ -42,18 +45,46 @@ class MainActivity : AppCompatActivity() {
             startActivity(trainingActivity)
         }
 
-        settingsButton.setOnTouchListener { v, event ->
+        settingsButton.setOnClickListener {
+            openSettingsDialog()
+        }
+    }
+
+    private fun onTouchAnimated(btn : ImageButton) {
+        btn.setOnTouchListener { v, event ->
             when (event?.action) {
-                MotionEvent.ACTION_DOWN -> settingsButton.animate().scaleX(1.1f).scaleY(1.1f).duration = 50
-                MotionEvent.ACTION_UP -> settingsButton.animate().scaleX(1f).scaleY(1f).duration = 50
+                MotionEvent.ACTION_DOWN -> btn.animate().scaleX(1.1f).scaleY(1.1f).duration = 50
+                MotionEvent.ACTION_UP -> btn.animate().scaleX(1f).scaleY(1f).duration = 50
             }
             v?.onTouchEvent(event) ?: true
         }
+    }
 
-        settingsButton.setOnClickListener {
-            var settingsDialog = SettingsDialogWindow()
+    private fun openNicknameDialog() { // здесь открывается диалог для ввода никнейма, который потом принимает текствью с никнеймом
+        dialog.setContentView(R.layout.nickname_window)
 
-            settingsDialog.show(supportFragmentManager, "customSettings")
+        val submitButton : ImageButton = dialog.findViewById(R.id.submitButton)
+        val nicknameEt : EditText = dialog.findViewById(R.id.nicknameEditText)
+
+        dialog.show()
+
+        submitButton.setOnClickListener {
+            dialog.dismiss()
+            val playActivity = Intent(this, BotActivity::class.java)
+            playActivity.putExtra("nickname", nicknameEt.text.toString()) // передаю в интент введенный ник
+            startActivity(playActivity)
         }
+    }
+
+    private fun openSettingsDialog() {
+        dialog.setContentView(R.layout.settings_window)
+
+        val soundButton : ImageButton = dialog.findViewById(R.id.soundButton)
+
+        soundButton.setOnClickListener {
+            MediaPlayer.create(this, R.raw.pudge).start()
+        }
+
+        dialog.show()
     }
 }
