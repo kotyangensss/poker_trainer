@@ -50,15 +50,7 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    private fun onTouchAnimated(btn : ImageButton) {
-        btn.setOnTouchListener { v, event ->
-            when (event?.action) {
-                MotionEvent.ACTION_DOWN -> btn.animate().scaleX(1.1f).scaleY(1.1f).duration = 50
-                MotionEvent.ACTION_UP -> btn.animate().scaleX(1f).scaleY(1f).duration = 50
-            }
-            v?.onTouchEvent(event) ?: true
-        }
-    }
+
 
     private fun openNicknameDialog() { // здесь открывается диалог для ввода никнейма, который потом принимает текствью с никнеймом
         dialog.setContentView(R.layout.nickname_window)
