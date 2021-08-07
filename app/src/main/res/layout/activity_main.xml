@@ -32,7 +32,6 @@
             android:layout_marginTop="295dp"
             android:layout_marginEnd="123dp"
             android:layout_marginBottom="1dp"
-            android:src="@drawable/ic_launcher_foreground"
             app:layout_constraintBottom_toTopOf="@+id/trainingButton"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHeight_percent="0.1"
@@ -53,6 +52,28 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/playButton"
             app:layout_constraintWidth_percent="0.4" />
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Играть"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toBottomOf="@+id/playButton"
+            app:layout_constraintEnd_toEndOf="@+id/playButton"
+            app:layout_constraintStart_toStartOf="@+id/playButton"
+            app:layout_constraintTop_toTopOf="@+id/playButton" />
+
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Тренировка"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toBottomOf="@+id/trainingButton"
+            app:layout_constraintEnd_toEndOf="@+id/trainingButton"
+            app:layout_constraintStart_toStartOf="@+id/trainingButton"
+            app:layout_constraintTop_toBottomOf="@+id/playButton" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 

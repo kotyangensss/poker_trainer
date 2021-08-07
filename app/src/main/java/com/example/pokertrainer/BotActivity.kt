@@ -1,5 +1,6 @@
 package com.example.pokertrainer
 
+import android.media.MediaPlayer
 import android.os.Bundle
 import android.view.View
 import android.widget.ImageButton
@@ -49,10 +50,18 @@ class BotActivity : AppCompatActivity() {
         onTouchAnimated(callButton, foldButton, betButton, returnButton)
 
         foldButton.setOnClickListener {
+            MediaPlayer.create(this, R.raw.elkipalki).start()
             startRound()
+        }
+        callButton.setOnClickListener {
+            MediaPlayer.create(this, R.raw.pudg).start()
+        }
+        betButton.setOnClickListener {
+            MediaPlayer.create(this, R.raw.shaverma).start()
         }
 
         returnButton.setOnClickListener {
+            MediaPlayer.create(this, R.raw.pudgety).start()
             this.finish()
         }
     }

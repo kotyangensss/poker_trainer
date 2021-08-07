@@ -130,8 +130,7 @@
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/foldButton"
         app:layout_constraintTop_toTopOf="@+id/guideline7"
-        app:layout_constraintVertical_bias="0.5"
-        app:srcCompat="@drawable/pudge" />
+        app:layout_constraintVertical_bias="0.5" />
 
     <ImageButton
         android:id="@+id/betButton"
@@ -139,10 +138,9 @@
         android:layout_height="80dp"
         app:layout_constraintBottom_toTopOf="@+id/guideline9"
         app:layout_constraintEnd_toStartOf="@+id/foldButton"
-        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_bias="0.50"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/guideline7"
-        app:srcCompat="@drawable/pudge" />
+        app:layout_constraintTop_toTopOf="@+id/guideline7" />
 
     <ImageButton
         android:id="@+id/foldButton"
@@ -153,8 +151,7 @@
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/guideline7"
-        app:layout_constraintVertical_bias="0.50"
-        app:srcCompat="@drawable/pudge" />
+        app:layout_constraintVertical_bias="0.50" />
 
     <TextView
         android:id="@+id/enemynicknameTextView"
@@ -183,5 +180,38 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         app:layout_constraintGuide_percent="0.95896035" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="АБОБУС"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="@+id/betButton"
+        app:layout_constraintEnd_toEndOf="@+id/betButton"
+        app:layout_constraintStart_toStartOf="@+id/betButton"
+        app:layout_constraintTop_toTopOf="@+id/betButton" />
+
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Фолд"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="@+id/foldButton"
+        app:layout_constraintEnd_toEndOf="@+id/foldButton"
+        app:layout_constraintStart_toStartOf="@+id/foldButton"
+        app:layout_constraintTop_toTopOf="@+id/foldButton" />
+
+    <TextView
+        android:id="@+id/textView6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Колл"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="@+id/callButton"
+        app:layout_constraintEnd_toEndOf="@+id/callButton"
+        app:layout_constraintStart_toStartOf="@+id/callButton"
+        app:layout_constraintTop_toTopOf="@+id/callButton" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

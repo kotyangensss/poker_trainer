@@ -1,6 +1,7 @@
 package com.example.pokertrainer
 
 import android.app.Dialog
+import android.media.MediaPlayer
 import android.os.Bundle
 import android.view.View
 import android.widget.ImageButton
@@ -46,6 +47,7 @@ class TrainingActivity : AppCompatActivity() {
             chooseSuitDialog(dialog, "second")
         }
         returnButton.setOnClickListener {
+            MediaPlayer.create(this, R.raw.podros).start()
             this.finish()
         }
     }
@@ -122,6 +124,7 @@ class TrainingActivity : AppCompatActivity() {
             for (image in images) {
                 image.setOnClickListener {
                     dialog.dismiss()
+                    MediaPlayer.create(this, R.raw.wikarno).start()
                     if (whichPressed == "first") {
                         firstCard.setImageDrawable(image.drawable)
                     } else {

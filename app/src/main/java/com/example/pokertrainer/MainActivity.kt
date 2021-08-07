@@ -37,15 +37,18 @@ class MainActivity : AppCompatActivity() {
         onTouchAnimated(playButton, trainingButton, settingsButton)
 
         playButton.setOnClickListener {
+            MediaPlayer.create(this, R.raw.zadelo).start()
             openNicknameDialog()
         }
 
         trainingButton.setOnClickListener {
+            MediaPlayer.create(this, R.raw.xorowego).start()
             val trainingActivity = Intent(this, TrainingActivity::class.java)
             startActivity(trainingActivity)
         }
 
         settingsButton.setOnClickListener {
+            MediaPlayer.create(this, R.raw.wtani).start()
             openSettingsDialog()
         }
     }
@@ -64,6 +67,7 @@ class MainActivity : AppCompatActivity() {
 
         submitButton.setOnClickListener {
             dialog.dismiss()
+            MediaPlayer.create(this, R.raw.yapudge).start()
             val playActivity = Intent(this, BotActivity::class.java)
             playActivity.putExtra("nickname", nicknameEt.text.toString()) // передаю в интент введенный ник
             startActivity(playActivity)
