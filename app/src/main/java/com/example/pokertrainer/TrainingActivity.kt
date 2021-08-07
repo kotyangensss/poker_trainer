@@ -53,6 +53,9 @@ class TrainingActivity : AppCompatActivity() {
 
     private fun chooseSuitDialog(dialog: Dialog, whichPressed : String) {
         dialog.setContentView(R.layout.choose_suit)
+
+        hideDialogUI(dialog, this)
+
         val peaks: ImageView = dialog.findViewById(R.id.imagePeaks)
         val hearts: ImageView = dialog.findViewById(R.id.imageHearts)
         val diamonds: ImageView = dialog.findViewById(R.id.imageDiamonds)
@@ -82,6 +85,8 @@ class TrainingActivity : AppCompatActivity() {
 
     private fun chooseValDialog(dialog: Dialog, suit: String, whichPressed: String) {
         dialog.setContentView(R.layout.choose_value)
+
+        hideDialogUI(dialog, this)
 
         val two: ImageView = dialog.findViewById(R.id.imageTwo)
         val three: ImageView = dialog.findViewById(R.id.imageThree)
