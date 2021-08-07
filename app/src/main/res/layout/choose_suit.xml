@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+
+    <ImageView
+        android:id="@+id/imageClubs"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/imagePeaks"
+        app:layout_constraintTop_toBottomOf="@+id/imageDiamonds"
+        app:srcCompat="@drawable/clubs" />
+
+    <ImageView
+        android:id="@+id/imageDiamonds"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        app:layout_constraintBottom_toTopOf="@+id/imageClubs"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/imageHearts"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/diamonds" />
+
+    <ImageView
+        android:id="@+id/imageHearts"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        app:layout_constraintBottom_toTopOf="@+id/imagePeaks"
+        app:layout_constraintEnd_toStartOf="@+id/imageDiamonds"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/hearts" />
+
+    <ImageView
+        android:id="@+id/imagePeaks"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/imageClubs"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageHearts"
+        app:srcCompat="@drawable/peaks" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

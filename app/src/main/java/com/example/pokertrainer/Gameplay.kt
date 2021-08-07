@@ -11,6 +11,8 @@ fun generateCard(): Card = Card(
     }, Random.nextInt(2, 15)
 )
 
+
+
 fun isFlush(
     first: Card,
     second: Card,

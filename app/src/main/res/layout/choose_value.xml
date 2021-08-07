@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+
+    <ImageView
+        android:id="@+id/imageQueen"
+        android:layout_width="62dp"
+        android:layout_height="92.5dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="4dp"
+        android:layout_marginBottom="4dp"
+        app:layout_constraintBottom_toTopOf="@+id/imageNine"
+        app:layout_constraintEnd_toStartOf="@+id/imageJack"
+        app:layout_constraintStart_toEndOf="@+id/imageKing"
+        app:layout_constraintTop_toBottomOf="@+id/imageAce"
+        app:srcCompat="@drawable/a_clubs" />
+
+    <ImageView
+        android:id="@+id/imageKing"
+        android:layout_width="62dp"
+        android:layout_height="92.5dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="4dp"
+        android:layout_marginBottom="4dp"
+        app:layout_constraintBottom_toTopOf="@+id/imageTen"
+        app:layout_constraintEnd_toStartOf="@+id/imageQueen"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageAce"
+        app:srcCompat="@drawable/a_clubs" />
+
+    <ImageView
+        android:id="@+id/imageAce"
+        android:layout_width="62dp"
+        android:layout_height="92.5dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginBottom="4dp"
+        app:layout_constraintBottom_toTopOf="@+id/imageQueen"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/a_clubs" />
+
+    <ImageView
+        android:id="@+id/imageJack"
+        android:layout_width="62dp"
+        android:layout_height="92.5dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="4dp"
+        android:layout_marginBottom="4dp"
+        app:layout_constraintBottom_toTopOf="@+id/imageEight"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/imageQueen"
+        app:layout_constraintTop_toBottomOf="@+id/imageAce"
+        app:srcCompat="@drawable/a_clubs" />
+
+    <ImageView
+        android:id="@+id/imageTwo"
+        android:layout_width="62dp"
+        android:layout_height="92.5dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="4dp"
+        android:layout_marginBottom="4dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/imageThree"
+        app:layout_constraintTop_toBottomOf="@+id/imageFive"
+        app:srcCompat="@drawable/a_clubs" />
+
+    <ImageView
+        android:id="@+id/imageFour"
+        android:layout_width="62dp"
+        android:layout_height="92.5dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="4dp"
+        android:layout_marginBottom="4dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/imageThree"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageSeven"
+        app:srcCompat="@drawable/a_clubs" />
+
+    <ImageView
+        android:id="@+id/imageThree"
+        android:layout_width="62dp"
+        android:layout_height="92.5dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="4dp"
+        android:layout_marginBottom="4dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/imageTwo"
+        app:layout_constraintStart_toEndOf="@+id/imageFour"
+        app:layout_constraintTop_toBottomOf="@+id/imageSix"
+        app:srcCompat="@drawable/a_clubs" />
+
+    <ImageView
+        android:id="@+id/imageEight"
+        android:layout_width="62dp"
+        android:layout_height="92.5dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="4dp"
+        android:layout_marginBottom="4dp"
+        app:layout_constraintBottom_toTopOf="@+id/imageFive"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/imageNine"
+        app:layout_constraintTop_toBottomOf="@+id/imageJack"
+        app:srcCompat="@drawable/a_clubs" />
+
+    <ImageView
+        android:id="@+id/imageFive"
+        android:layout_width="62dp"
+        android:layout_height="92.5dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="4dp"
+        android:layout_marginBottom="4dp"
+        app:layout_constraintBottom_toTopOf="@+id/imageTwo"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/imageSix"
+        app:layout_constraintTop_toBottomOf="@+id/imageEight"
+        app:srcCompat="@drawable/a_clubs" />
+
+    <ImageView
+        android:id="@+id/imageSeven"
+        android:layout_width="62dp"
+        android:layout_height="92.5dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="4dp"
+        android:layout_marginBottom="4dp"
+        app:layout_constraintBottom_toTopOf="@+id/imageFour"
+        app:layout_constraintEnd_toStartOf="@+id/imageSix"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageTen"
+        app:srcCompat="@drawable/a_clubs" />
+
+    <ImageView
+        android:id="@+id/imageNine"
+        android:layout_width="62dp"
+        android:layout_height="92.5dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="4dp"
+        android:layout_marginBottom="4dp"
+        app:layout_constraintBottom_toTopOf="@+id/imageSix"
+        app:layout_constraintEnd_toStartOf="@+id/imageEight"
+        app:layout_constraintStart_toEndOf="@+id/imageTen"
+        app:layout_constraintTop_toBottomOf="@+id/imageQueen"
+        app:srcCompat="@drawable/a_clubs" />
+
+    <ImageView
+        android:id="@+id/imageSix"
+        android:layout_width="62dp"
+        android:layout_height="92.5dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="4dp"
+        android:layout_marginBottom="4dp"
+        app:layout_constraintBottom_toTopOf="@+id/imageThree"
+        app:layout_constraintEnd_toStartOf="@+id/imageFive"
+        app:layout_constraintStart_toEndOf="@+id/imageSeven"
+        app:layout_constraintTop_toBottomOf="@+id/imageNine"
+        app:srcCompat="@drawable/a_clubs" />
+
+    <ImageView
+        android:id="@+id/imageTen"
+        android:layout_width="62dp"
+        android:layout_height="92.5dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="4dp"
+        android:layout_marginBottom="4dp"
+        app:layout_constraintBottom_toTopOf="@+id/imageSeven"
+        app:layout_constraintEnd_toStartOf="@+id/imageNine"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageKing"
+        app:srcCompat="@drawable/a_clubs" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

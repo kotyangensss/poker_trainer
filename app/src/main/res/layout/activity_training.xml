@@ -5,14 +5,31 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
 
+    android:background="#237A25"
     tools:context=".TrainingActivity">
 
     <ImageButton
+        android:id="@+id/firstCard2"
+        android:layout_width="99.2dp"
+        android:layout_height="148dp"
+        app:layout_constraintEnd_toStartOf="@+id/guideline3"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@android:drawable/ic_menu_add" />
+
+    <ImageView
         android:id="@+id/secondCard"
-        android:layout_width="124dp"
-        android:layout_height="185dp"
+        android:layout_width="99.2dp"
+        android:layout_height="148dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="@+id/guideline3"
+        app:srcCompat="@android:drawable/ic_menu_add" />
+
+    <ImageButton
+        android:id="@+id/secondCard2"
+        android:layout_width="99.2dp"
+        android:layout_height="148dp"
+        app:layout_constraintStart_toStartOf="@+id/guideline3"
+        app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@android:drawable/ic_menu_add" />
 
     <ImageButton
@@ -33,12 +50,19 @@
         app:layout_constraintGuide_begin="0dp"
         app:layout_constraintGuide_percent=".5" />
 
-    <ImageButton
+    <ImageView
         android:id="@+id/firstCard"
-        android:layout_width="124dp"
-        android:layout_height="185dp"
+        android:layout_width="99.2dp"
+        android:layout_height="148dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/guideline3"
         app:srcCompat="@android:drawable/ic_menu_add" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="450dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
