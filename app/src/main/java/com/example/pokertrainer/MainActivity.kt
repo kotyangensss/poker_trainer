@@ -5,6 +5,7 @@ import android.content.Intent
 import android.media.MediaPlayer
 import android.os.Bundle
 import android.view.View
+import android.view.Window
 import android.widget.EditText
 import android.widget.ImageButton
 import androidx.appcompat.app.AppCompatActivity
@@ -54,6 +55,8 @@ class MainActivity : AppCompatActivity() {
     private fun openNicknameDialog() { // здесь открывается диалог для ввода никнейма, который потом принимает текствью с никнеймом
         dialog.setContentView(R.layout.nickname_window)
 
+        hideDialogUI(dialog, this)
+
         val submitButton : ImageButton = dialog.findViewById(R.id.submitButton)
         val nicknameEt : EditText = dialog.findViewById(R.id.nicknameEditText)
 
@@ -69,6 +72,8 @@ class MainActivity : AppCompatActivity() {
 
     private fun openSettingsDialog() {
         dialog.setContentView(R.layout.settings_window)
+
+        hideDialogUI(dialog, this)
 
         val soundButton : ImageButton = dialog.findViewById(R.id.soundButton)
 
