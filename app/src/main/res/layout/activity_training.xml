@@ -8,28 +8,13 @@
     android:background="#237A25"
     tools:context=".TrainingActivity">
 
-    <ImageButton
-        android:id="@+id/firstCard2"
-        android:layout_width="99.2dp"
-        android:layout_height="148dp"
-        app:layout_constraintEnd_toStartOf="@+id/guideline3"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@android:drawable/ic_menu_add" />
-
     <ImageView
         android:id="@+id/secondCard"
         android:layout_width="99.2dp"
-        android:layout_height="148dp"
+        android:layout_height="0dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="@+id/guideline3"
-        app:srcCompat="@android:drawable/ic_menu_add" />
-
-    <ImageButton
-        android:id="@+id/secondCard2"
-        android:layout_width="99.2dp"
-        android:layout_height="148dp"
-        app:layout_constraintStart_toStartOf="@+id/guideline3"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/secondSetCard"
         app:srcCompat="@android:drawable/ic_menu_add" />
 
     <ImageButton
@@ -53,9 +38,10 @@
     <ImageView
         android:id="@+id/firstCard"
         android:layout_width="99.2dp"
-        android:layout_height="148dp"
+        android:layout_height="0dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/guideline3"
+        app:layout_constraintTop_toBottomOf="@+id/firstSetCard"
         app:srcCompat="@android:drawable/ic_menu_add" />
 
     <androidx.constraintlayout.widget.Guideline
@@ -64,5 +50,32 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         app:layout_constraintGuide_begin="450dp" />
+
+    <ImageView
+        android:id="@+id/firstSetCard"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="99dp"
+        android:layout_marginTop="66dp"
+        android:layout_marginEnd="17dp"
+        android:layout_marginBottom="369dp"
+        app:layout_constraintBottom_toTopOf="@+id/firstCard"
+        app:layout_constraintEnd_toStartOf="@+id/secondSetCard"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/back" />
+
+    <ImageView
+        android:id="@+id/secondSetCard"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="66dp"
+        android:layout_marginEnd="97dp"
+        android:layout_marginBottom="369dp"
+        app:layout_constraintBottom_toTopOf="@+id/secondCard"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/firstSetCard"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/back" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

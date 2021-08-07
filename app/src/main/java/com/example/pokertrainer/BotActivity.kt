@@ -1,7 +1,6 @@
 package com.example.pokertrainer
 
 import android.os.Bundle
-import android.util.Log
 import android.view.View
 import android.widget.ImageButton
 import android.widget.ImageView
@@ -25,12 +24,13 @@ class BotActivity : AppCompatActivity() {
     private var round: UInt = 0u
     private var isYourMove: Boolean = true
 
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         supportActionBar?.hide()
-        window.decorView.systemUiVisibility = View.SYSTEM_UI_FLAG_HIDE_NAVIGATION
+
+        hideSystemUI(window, View(this))
         setContentView(R.layout.activity_bot)
+
         returnButton = findViewById(R.id.returnButton)
         nicknameTextView = findViewById(R.id.nicknameTextView)
         foldButton = findViewById(R.id.foldButton)
@@ -39,19 +39,8 @@ class BotActivity : AppCompatActivity() {
         firstCard = findViewById(R.id.myCard1)
         secondCard = findViewById(R.id.myCard2)
         nicknameTextView.text = intent.getStringExtra("nickname").toString()
-        startRound()
-    }
 
-    override fun onWindowFocusChanged(hasFocus: Boolean) {
-        super.onWindowFocusChanged(hasFocus)
-        if (hasFocus) {
-            window.decorView.systemUiVisibility = (View.SYSTEM_UI_FLAG_LAYOUT_STABLE
-                    or View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION
-                    or View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
-                    or View.SYSTEM_UI_FLAG_HIDE_NAVIGATION
-                    or View.SYSTEM_UI_FLAG_FULLSCREEN
-                    or View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY)
-        }
+        startRound()
     }
 
     override fun onResume() {
@@ -71,13 +60,7 @@ class BotActivity : AppCompatActivity() {
         }
     }
 
-    override fun onDestroy() {
-        super.onDestroy()
-
-        Log.d("ABOBA", "onDestroy")
-    }
-
-    fun startRound() {
+    private fun startRound() {
         round += 1u
         bank += smallBlind + bigBlind
         if (isYourMove) {
@@ -131,9 +114,9 @@ class BotActivity : AppCompatActivity() {
         secondCard.setImageResource(id)
     }
 
-    fun startFlop(){}
+    private fun startFlop(){}
 
-    fun startTurn(){}
+    private fun startTurn(){}
 
-    fun startRiver(){}
+    private fun startRiver(){}
 }
