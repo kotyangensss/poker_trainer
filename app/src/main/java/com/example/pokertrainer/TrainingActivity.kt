@@ -118,9 +118,9 @@ class TrainingActivity : AppCompatActivity() {
                 image.setOnClickListener {
                     dialog.dismiss()
                     if (whichPressed == "first") {
-                        firstSetCard.setImageDrawable(image.drawable)
+                        firstCard.setImageDrawable(image.drawable)
                     } else {
-                        secondSetCard.setImageDrawable(image.drawable)
+                        secondCard.setImageDrawable(image.drawable)
                     }
                 }
             }
