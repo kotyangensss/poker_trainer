@@ -33,9 +33,7 @@ class MainActivity : AppCompatActivity() {
     override fun onResume() {
         super.onResume()
 
-        onTouchAnimated(playButton)
-        onTouchAnimated(trainingButton)
-        onTouchAnimated(settingsButton)
+        onTouchAnimated(playButton, trainingButton, settingsButton)
 
         playButton.setOnClickListener {
             openNicknameDialog()

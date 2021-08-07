@@ -46,10 +46,7 @@ class BotActivity : AppCompatActivity() {
     override fun onResume() {
         super.onResume()
 
-        onTouchAnimated(callButton)
-        onTouchAnimated(foldButton)
-        onTouchAnimated(betButton)
-        onTouchAnimated(returnButton)
+        onTouchAnimated(callButton, foldButton, betButton, returnButton)
 
         foldButton.setOnClickListener {
             startRound()
