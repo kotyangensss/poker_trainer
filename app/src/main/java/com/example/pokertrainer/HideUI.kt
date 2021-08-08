@@ -21,5 +21,4 @@ fun hideDialogUI(dialog: Dialog, activity : AppCompatActivity) {
     if (dialogWindow != null) {
         hideSystemUI(dialogWindow, View(activity))
     }
-
 }

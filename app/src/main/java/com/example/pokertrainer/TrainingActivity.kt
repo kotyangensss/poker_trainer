@@ -1,5 +1,6 @@
 package com.example.pokertrainer
 
+import android.app.AlertDialog
 import android.app.Dialog
 import android.media.MediaPlayer
 import android.os.Bundle
@@ -69,40 +70,45 @@ class TrainingActivity : AppCompatActivity() {
 
         peaks.setOnClickListener {
             dialog.dismiss()
-             chooseValDialog(dialog, "_peaks", whichPressed)
+             chooseValDialog("_peaks", whichPressed)
         }
         hearts.setOnClickListener {
             dialog.dismiss()
-            chooseValDialog(dialog, "_hearts", whichPressed)
+            chooseValDialog( "_hearts", whichPressed)
         }
         clubs.setOnClickListener {
             dialog.dismiss()
-            chooseValDialog(dialog, "_clubs", whichPressed)
+            chooseValDialog("_clubs", whichPressed)
         }
         diamonds.setOnClickListener {
             dialog.dismiss()
-            chooseValDialog(dialog, "_diamonds", whichPressed)
+            chooseValDialog( "_diamonds", whichPressed)
         }
     }
 
-    private fun chooseValDialog(dialog: Dialog, suit: String, whichPressed: String) {
-        dialog.setContentView(R.layout.choose_value)
+    private fun chooseValDialog(suit: String, whichPressed: String) {
+        val view = View.inflate(this, R.layout.choose_value, null)
 
-        hideDialogUI(dialog, this)
+        val builder = AlertDialog.Builder(this)
+        builder.setView(view)
 
-        val two: ImageView = dialog.findViewById(R.id.imageTwo)
-        val three: ImageView = dialog.findViewById(R.id.imageThree)
-        val four: ImageView = dialog.findViewById(R.id.imageFour)
-        val five: ImageView = dialog.findViewById(R.id.imageFive)
-        val six: ImageView = dialog.findViewById(R.id.imageSix)
-        val seven: ImageView = dialog.findViewById(R.id.imageSeven)
-        val eight: ImageView = dialog.findViewById(R.id.imageEight)
-        val nine: ImageView = dialog.findViewById(R.id.imageNine)
-        val ten: ImageView = dialog.findViewById(R.id.imageTen)
-        val jack: ImageView = dialog.findViewById(R.id.imageJack)
-        val queen: ImageView = dialog.findViewById(R.id.imageQueen)
-        val king: ImageView = dialog.findViewById(R.id.imageKing)
-        val ace: ImageView = dialog.findViewById(R.id.imageAce)
+        val dialog1 = builder.create()
+        dialog1.window?.setBackgroundDrawableResource(android.R.color.transparent)
+        dialog1.setCancelable(true)
+
+        val two: ImageView = view.findViewById(R.id.imageTwo)
+        val three: ImageView = view.findViewById(R.id.imageThree)
+        val four: ImageView = view.findViewById(R.id.imageFour)
+        val five: ImageView = view.findViewById(R.id.imageFive)
+        val six: ImageView = view.findViewById(R.id.imageSix)
+        val seven: ImageView = view.findViewById(R.id.imageSeven)
+        val eight: ImageView =view.findViewById(R.id.imageEight)
+        val nine: ImageView = view.findViewById(R.id.imageNine)
+        val ten: ImageView = view.findViewById(R.id.imageTen)
+        val jack: ImageView = view.findViewById(R.id.imageJack)
+        val queen: ImageView = view.findViewById(R.id.imageQueen)
+        val king: ImageView = view.findViewById(R.id.imageKing)
+        val ace: ImageView = view.findViewById(R.id.imageAce)
 
         onTouchAnimated(two, three, four, five, six, seven, eight, nine, ten, jack, queen, king, ace)
 
@@ -118,12 +124,12 @@ class TrainingActivity : AppCompatActivity() {
         }
 
         setId(two, three, four, five, six, seven, eight, nine, ten, jack, queen, king, ace)
-        dialog.show()
+        dialog1.show()
 
         fun setOnClickForAllImages(vararg images : ImageView) {
             for (image in images) {
                 image.setOnClickListener {
-                    dialog.dismiss()
+                    dialog1.dismiss()
                     MediaPlayer.create(this, R.raw.wikarno).start()
                     if (whichPressed == "first") {
                         firstSetCard.setImageDrawable(image.drawable)

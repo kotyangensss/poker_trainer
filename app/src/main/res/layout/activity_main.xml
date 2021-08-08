@@ -10,11 +10,13 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@drawable/lil_revive"
+        android:background="@drawable/gradient_test"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0">
 
         <ImageButton
             android:id="@+id/playButton"
@@ -74,6 +76,50 @@
             app:layout_constraintEnd_toEndOf="@+id/trainingButton"
             app:layout_constraintStart_toStartOf="@+id/trainingButton"
             app:layout_constraintTop_toTopOf="@+id/trainingButton" />
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            app:layout_constraintBottom_toTopOf="@+id/playButton"
+            app:layout_constraintEnd_toEndOf="@+id/playButton"
+            app:layout_constraintStart_toStartOf="@+id/playButton"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.89"
+            app:srcCompat="@drawable/peaks" />
+
+        <ImageView
+            android:id="@+id/imageView2"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/trainingButton"
+            app:layout_constraintStart_toStartOf="@+id/trainingButton"
+            app:layout_constraintTop_toBottomOf="@+id/trainingButton"
+            app:layout_constraintVertical_bias="0.104"
+            app:srcCompat="@drawable/clubs" />
+
+        <ImageView
+            android:id="@+id/imageView3"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_marginTop="68dp"
+            app:layout_constraintEnd_toStartOf="@+id/playButton"
+            app:layout_constraintHorizontal_bias="0.491"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/playButton"
+            app:srcCompat="@drawable/hearts" />
+
+        <ImageView
+            android:id="@+id/imageView4"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_marginTop="68dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.403"
+            app:layout_constraintStart_toEndOf="@+id/playButton"
+            app:layout_constraintTop_toTopOf="@+id/playButton"
+            app:srcCompat="@drawable/diamonds" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
