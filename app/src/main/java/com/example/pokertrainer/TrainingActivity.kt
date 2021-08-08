@@ -126,9 +126,9 @@ class TrainingActivity : AppCompatActivity() {
                     dialog.dismiss()
                     MediaPlayer.create(this, R.raw.wikarno).start()
                     if (whichPressed == "first") {
-                        firstCard.setImageDrawable(image.drawable)
+                        firstSetCard.setImageDrawable(image.drawable)
                     } else {
-                        secondCard.setImageDrawable(image.drawable)
+                        secondSetCard.setImageDrawable(image.drawable)
                     }
                 }
             }

@@ -1,19 +1,19 @@
 package com.example.pokertrainer
 
+import android.app.AlertDialog
 import android.app.Dialog
 import android.content.Intent
 import android.media.MediaPlayer
 import android.os.Bundle
 import android.view.View
 import android.view.Window
+import android.widget.Button
 import android.widget.EditText
 import android.widget.ImageButton
 import androidx.appcompat.app.AppCompatActivity
+import java.nio.channels.AlreadyBoundException
 
 class MainActivity : AppCompatActivity() {
-
-    private lateinit var dialog : Dialog // а вот и решение проблемы
-
     private lateinit var playButton : ImageButton
     private lateinit var trainingButton : ImageButton
     private lateinit var settingsButton : ImageButton
@@ -23,8 +23,6 @@ class MainActivity : AppCompatActivity() {
         supportActionBar?.hide()
         hideSystemUI(window, View(this))
         setContentView(R.layout.activity_main)
-
-        dialog = Dialog(this)
 
         playButton = findViewById(R.id.playButton)
         trainingButton = findViewById(R.id.trainingButton)
@@ -56,14 +54,17 @@ class MainActivity : AppCompatActivity() {
 
 
     private fun openNicknameDialog() { // здесь открывается диалог для ввода никнейма, который потом принимает текствью с никнеймом
-        dialog.setContentView(R.layout.nickname_window)
+        val view = View.inflate(this@MainActivity, R.layout.nickname_window, null)
 
-        hideDialogUI(dialog, this)
+        val builder = AlertDialog.Builder(this@MainActivity)
+        builder.setView(view)
 
-        val submitButton : ImageButton = dialog.findViewById(R.id.submitButton)
-        val nicknameEt : EditText = dialog.findViewById(R.id.nicknameEditText)
+        val dialog = builder.create()
+        dialog.window?.setBackgroundDrawableResource(android.R.color.transparent)
+        dialog.setCancelable(true)
 
-        dialog.show()
+        val submitButton : ImageButton = view.findViewById(R.id.submitButton)
+        val nicknameEt : EditText = view.findViewById(R.id.nicknameEditText)
 
         submitButton.setOnClickListener {
             dialog.dismiss()
@@ -72,14 +73,21 @@ class MainActivity : AppCompatActivity() {
             playActivity.putExtra("nickname", nicknameEt.text.toString()) // передаю в интент введенный ник
             startActivity(playActivity)
         }
+
+        dialog.show()
     }
 
     private fun openSettingsDialog() {
-        dialog.setContentView(R.layout.settings_window)
+        val view = View.inflate(this, R.layout.settings_window, null)
 
-        hideDialogUI(dialog, this)
+        val builder = AlertDialog.Builder(this)
+        builder.setView(view)
 
-        val soundButton : ImageButton = dialog.findViewById(R.id.soundButton)
+        val dialog = builder.create()
+        dialog.window?.setBackgroundDrawableResource(android.R.color.transparent)
+        dialog.setCancelable(true)
+
+        val soundButton : ImageButton = view.findViewById(R.id.soundButton)
 
         soundButton.setOnClickListener {
             MediaPlayer.create(this, R.raw.pudge).start()

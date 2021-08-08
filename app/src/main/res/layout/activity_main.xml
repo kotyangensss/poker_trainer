@@ -17,63 +17,64 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <ImageButton
-            android:id="@+id/settingsButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@android:drawable/ic_menu_manage" />
-
-        <ImageButton
             android:id="@+id/playButton"
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:layout_marginStart="123dp"
-            android:layout_marginTop="295dp"
-            android:layout_marginEnd="123dp"
-            android:layout_marginBottom="1dp"
-            app:layout_constraintBottom_toTopOf="@+id/trainingButton"
+            android:layout_width="168dp"
+            android:layout_height="88dp"
+            android:background="@drawable/button_bg"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHeight_percent="0.1"
+            app:layout_constraintHorizontal_bias="0.497"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintWidth_percent="0.4" />
+            app:layout_constraintVertical_bias="0.391" />
 
         <ImageButton
             android:id="@+id/trainingButton"
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:layout_marginStart="122dp"
-            android:layout_marginEnd="122dp"
-            android:layout_marginBottom="289dp"
+            android:layout_width="168dp"
+            android:layout_height="88dp"
+            android:background="@drawable/button_bg"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHeight_percent="0.1"
+            app:layout_constraintHorizontal_bias="0.497"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/playButton"
-            app:layout_constraintWidth_percent="0.4" />
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.548" />
+
+        <ImageButton
+            android:id="@+id/settingsButton"
+            android:layout_width="56dp"
+            android:layout_height="56dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:background="@drawable/button_bg"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@android:drawable/ic_menu_manage" />
 
         <TextView
             android:id="@+id/textView2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Играть"
-            android:textSize="20sp"
+            android:textColor="@color/white"
+            android:textSize="24sp"
             app:layout_constraintBottom_toBottomOf="@+id/playButton"
             app:layout_constraintEnd_toEndOf="@+id/playButton"
             app:layout_constraintStart_toStartOf="@+id/playButton"
             app:layout_constraintTop_toTopOf="@+id/playButton" />
 
         <TextView
-            android:id="@+id/textView3"
+            android:id="@+id/textView7"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Тренировка"
-            android:textSize="20sp"
+            android:textColor="@color/white"
+            android:textSize="24sp"
             app:layout_constraintBottom_toBottomOf="@+id/trainingButton"
             app:layout_constraintEnd_toEndOf="@+id/trainingButton"
             app:layout_constraintStart_toStartOf="@+id/trainingButton"
-            app:layout_constraintTop_toBottomOf="@+id/playButton" />
+            app:layout_constraintTop_toTopOf="@+id/trainingButton" />
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 
