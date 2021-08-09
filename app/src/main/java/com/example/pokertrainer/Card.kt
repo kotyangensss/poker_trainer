@@ -34,12 +34,8 @@ class Card(_suit: Char, _value: Int) {
 
     fun getSuit() = suit
 
-    override fun equals(other: Any?): Boolean {
-        return if (other is Card){
-            this.getVal()==other.getVal()
-        }else{
-            false
-        }
+    fun equal(other:Card):Boolean{
+        return this.getVal() == other.getVal() && this.getSuit() == other.getSuit()
     }
 
 }

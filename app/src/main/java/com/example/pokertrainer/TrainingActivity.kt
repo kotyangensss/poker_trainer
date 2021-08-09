@@ -47,6 +47,13 @@ class TrainingActivity : AppCompatActivity() {
         secondCard.setOnClickListener {
             chooseSuitDialog(dialog, "second")
         }
+        firstSetCard.setOnClickListener {
+            chooseSuitDialog(dialog, "third")
+        }
+        secondSetCard.setOnClickListener {
+            chooseSuitDialog(dialog, "fourth")
+        }
+
         returnButton.setOnClickListener {
             MediaPlayer.create(this, R.raw.podros).start()
             this.finish()
@@ -131,10 +138,19 @@ class TrainingActivity : AppCompatActivity() {
                 image.setOnClickListener {
                     dialog1.dismiss()
                     MediaPlayer.create(this, R.raw.wikarno).start()
-                    if (whichPressed == "first") {
-                        firstSetCard.setImageDrawable(image.drawable)
-                    } else {
-                        secondSetCard.setImageDrawable(image.drawable)
+                    when (whichPressed) {
+                        "first" -> {
+                            firstCard.setImageDrawable(image.drawable)
+                        }
+                        "second" -> {
+                            secondCard.setImageDrawable(image.drawable)
+                        }
+                        "third" -> {
+                            firstSetCard.setImageDrawable(image.drawable)
+                        }
+                        else -> {
+                            secondSetCard.setImageDrawable(image.drawable)
+                        }
                     }
                 }
             }
