@@ -2,14 +2,19 @@ package com.example.pokertrainer
 
 import android.media.MediaPlayer
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import android.widget.ImageButton
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
+import retrofit2.Retrofit
+import retrofit2.converter.gson.GsonConverterFactory
 
 class BotActivity : AppCompatActivity() {
-
     private lateinit var returnButton: ImageButton
     private lateinit var nicknameTextView: TextView
     private lateinit var foldButton: ImageButton
@@ -41,6 +46,30 @@ class BotActivity : AppCompatActivity() {
 
         hideSystemUI(window, View(this))
         setContentView(R.layout.activity_bot)
+
+        // server
+
+        val retrofit = Retrofit.Builder()
+            .baseUrl("http://192.168.1.69:8080/")
+            .addConverterFactory(GsonConverterFactory.create())
+            .build()
+
+        val service : GameController = retrofit.create(GameController::class.java)
+        val call : Call<Boolean> = service.add(this.intent.getStringExtra("nickname").toString(), 54)
+        call.enqueue(object :Callback<Boolean> {
+            override fun onResponse(call: Call<Boolean>, response: Response<Boolean>) {
+                val bin : Boolean? = response.body()
+                Log.d("SERVER", "Все вроде четко !!!! $bin")
+
+            }
+
+            override fun onFailure(call: Call<Boolean>, t: Throwable) {
+                Log.d("SERVER", "ПрОиЗоШеЛ троллинг")
+            }
+        })
+
+
+        //
 
         returnButton = findViewById(R.id.returnButton)
         nicknameTextView = findViewById(R.id.nicknameTextView)
